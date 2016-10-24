@@ -1,0 +1,61 @@
+{
+  "name": "owner",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "address1": {
+      "type": "string",
+      "required": true,
+      "description": "Owner address1"
+    },
+    "address2": {
+      "type": "string",
+      "required": false,
+      "description": "Owner address2"
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "description": "Owner city"
+    },
+    "licenseNo": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "description": "Drivers License number"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "description": "Owner name"
+    },
+    "phone": {
+      "type": "string",
+      "required": false,
+      "description": "Owner phone number"
+    },
+    "state": {
+      "type": "string",
+      "required": true,
+      "description": "Owner state"
+    },
+    "zip": {
+      "type": "string",
+      "required": true,
+      "description": "Owner zip"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "vehicles": {
+      "type": "hasMany",
+      "model": "vehicle",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

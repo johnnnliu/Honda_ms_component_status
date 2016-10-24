@@ -1,0 +1,95 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/57f4eea80cf286d9cb41c536'
+  id: 57f4eea80cf286d9cb41c536
+  name: hondapot-devpot
+  status: active
+  orgType: apiProvider
+  displayName: Honda_POT (Dev_pot)
+  externalOrgId: 1b0a25d2-e71b-407b-96f7-66a796cc4971
+  externalInviteOverride: 'https://new-console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: 1b0a25d2-e71b-407b-96f7-66a796cc4971
+  externalNativeOrgId: 0cf64929-0626-4508-ab7a-0da1f04dc55c
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+catalog:
+  id: 57f4f5500cf251025463eb67
+  shortName: honda-dev-catalog
+  name: Honda Dev Catalog
+  sandbox: true
+app:
+  metadata:
+    guid: c75f689a-b87d-47a6-8da7-cc1f99c9bd1a
+  entity:
+    guid: c75f689a-b87d-47a6-8da7-cc1f99c9bd1a
+    name: vehiclecomponents
+    routes:
+      - guid: a887d493-bf92-437b-a745-078147d4ea1c
+        host: apiconnect-c75f689a-b87d-47a6-8da7-cc1f99c9bd1a
+        port: null
+        path: ''
+        domain:
+          guid: 4bf2fa60-b4ff-4fbb-a949-9d7b6a853e5e
+          name: hondapot-devpot.apic.mybluemix.net
+    running_instances: 0
+    services: []
+    available_domains:
+      - guid: 80753591-bb24-4775-955d-e7fb16d272e5
+        name: JohnLiuDomain.mybluemix.net
+        owning_organization_guid: 0cf64929-0626-4508-ab7a-0da1f04dc55c
+      - guid: 7a618415-70da-4726-90db-848aaa339742
+        name: Johnnnliu.mybluemix.net
+        owning_organization_guid: 0cf64929-0626-4508-ab7a-0da1f04dc55c
+      - guid: 4bf2fa60-b4ff-4fbb-a949-9d7b6a853e5e
+        name: hondapot-devpot.apic.mybluemix.net
+        owning_organization_guid: 0cf64929-0626-4508-ab7a-0da1f04dc55c
+      - guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
+        name: mybluemix.net
+        router_group_guid: null
+        router_group_type: null
+    production: false
+    space_guid: 1b0a25d2-e71b-407b-96f7-66a796cc4971
+    stack_guid: ac91d31a-86a3-453b-babf-8d49c9d763fc
+    buildpack: null
+    detected_buildpack: null
+    environment_json: {}
+    memory: 256
+    instances: 1
+    disk_quota: 1024
+    state: STOPPED
+    version: 6f84d907-3ace-4c33-8bcb-10e56884ac6d
+    command: null
+    console: false
+    debug: null
+    staging_task_id: null
+    package_state: PENDING
+    health_check_type: port
+    health_check_timeout: null
+    staging_failed_reason: null
+    staging_failed_description: null
+    diego: false
+    docker_image: null
+    package_updated_at: null
+    detected_start_command: ''
+    enable_ssh: true
+    docker_credentials_json:
+      redacted_message: '[PRIVATE DATA HIDDEN]'
+    ports: null
+id: 9988aaef-c55e-4111-87e3-83c2c5174e97
+target: 1.0.0
+versionOptions:
+  inplaceUpdate: true
+publishApp: true
+workspaceDir:
+  name: vehicleComponents
+  path: /Users/drmiller/vehicleComponents
+  id: 21
+  displayName: vehicleComponents
+  type: project
+  projectType: loopback

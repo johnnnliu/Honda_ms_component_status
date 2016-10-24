@@ -1,0 +1,41 @@
+{
+  "name": "vehicle",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "make": {
+      "type": "string",
+      "required": true,
+      "description": "Make of vehicle"
+    },
+    "model": {
+      "type": "string",
+      "required": true,
+      "description": "Model of vehicle"
+    },
+    "vin": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "description": "Vehicle ID number"
+    },
+    "year": {
+      "type": "number",
+      "required": true,
+      "description": "Year"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "components": {
+      "type": "hasMany",
+      "model": "component",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,12 @@
+{
+  "vehicleComponentsDS": {
+    "name": "vehicleComponentsDS",
+    "connector": "memory"
+  },
+  "vehicleComponentsCloudant": {
+    "url": "https://2fc4b90b-1c3c-4792-89b9-e1412b6f1824-bluemix:993caa461944ee10cad48bc40eb3df8a2f7f35bf33323eca37cde2375ea4b9b8@2fc4b90b-1c3c-4792-89b9-e1412b6f1824-bluemix.cloudant.com",
+    "database": "vehiclecompdrm",
+    "name": "vehicleComponentsCloudant",
+    "connector": "cloudant"
+  }
+}

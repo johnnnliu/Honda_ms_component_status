@@ -1,0 +1,1592 @@
+paths:
+  '/vehicles/{id}/components/{fk}':
+    get:
+      tags:
+        - vehicle
+      summary: Find a related item by id for components.
+      operationId: vehicle.prototype.__findById__components
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for components
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+    delete:
+      tags:
+        - vehicle
+      summary: Delete a related item by id for components.
+      operationId: vehicle.prototype.__destroyById__components
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for components
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - vehicle
+      summary: Update a related item by id for components.
+      operationId: vehicle.prototype.__updateById__components
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for components
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/component'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+  '/vehicles/{id}/components':
+    get:
+      tags:
+        - vehicle
+      summary: Queries components of vehicle.
+      operationId: vehicle.prototype.__get__components
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/component'
+      deprecated: false
+    post:
+      tags:
+        - vehicle
+      summary: Creates a new instance in components of this model.
+      operationId: vehicle.prototype.__create__components
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/component'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+    delete:
+      tags:
+        - vehicle
+      summary: Deletes all components of this model.
+      operationId: vehicle.prototype.__delete__components
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/vehicles/{id}/components/count':
+    get:
+      tags:
+        - vehicle
+      summary: Counts components of vehicle.
+      operationId: vehicle.prototype.__count__components
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /vehicles:
+    post:
+      tags:
+        - vehicle
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: vehicle.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/vehicle'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+    put:
+      tags:
+        - vehicle
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: vehicle.upsert__put_vehicles
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/vehicle'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+    patch:
+      tags:
+        - vehicle
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: vehicle.upsert__patch_vehicles
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/vehicle'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+    get:
+      tags:
+        - vehicle
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: vehicle.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/vehicle'
+      deprecated: false
+  /vehicles/replaceOrCreate:
+    post:
+      tags:
+        - vehicle
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: vehicle.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/vehicle'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+  /vehicles/upsertWithWhere:
+    post:
+      tags:
+        - vehicle
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: vehicle.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/vehicle'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+  '/vehicles/{id}/exists':
+    get:
+      tags:
+        - vehicle
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'vehicle.exists__get_vehicles_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/vehicles/{id}':
+    head:
+      tags:
+        - vehicle
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'vehicle.exists__head_vehicles_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - vehicle
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: vehicle.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+    delete:
+      tags:
+        - vehicle
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: vehicle.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - vehicle
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'vehicle.prototype.updateAttributes__put_vehicles_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/vehicle'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+    patch:
+      tags:
+        - vehicle
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'vehicle.prototype.updateAttributes__patch_vehicles_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/vehicle'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+  '/vehicles/{id}/replace':
+    post:
+      tags:
+        - vehicle
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: vehicle.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/vehicle'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+  /vehicles/findOne:
+    get:
+      tags:
+        - vehicle
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: vehicle.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+  /vehicles/update:
+    post:
+      tags:
+        - vehicle
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: vehicle.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/vehicle'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /vehicles/count:
+    get:
+      tags:
+        - vehicle
+      summary: Count instances of the model matched by where from the data source.
+      operationId: vehicle.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/owners/{id}/vehicles/{fk}':
+    get:
+      tags:
+        - owner
+      summary: Find a related item by id for vehicles.
+      operationId: owner.prototype.__findById__vehicles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for vehicles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+    delete:
+      tags:
+        - owner
+      summary: Delete a related item by id for vehicles.
+      operationId: owner.prototype.__destroyById__vehicles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for vehicles
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - owner
+      summary: Update a related item by id for vehicles.
+      operationId: owner.prototype.__updateById__vehicles
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for vehicles
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/vehicle'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+  '/owners/{id}/vehicles':
+    get:
+      tags:
+        - owner
+      summary: Queries vehicles of owner.
+      operationId: owner.prototype.__get__vehicles
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/vehicle'
+      deprecated: false
+    post:
+      tags:
+        - owner
+      summary: Creates a new instance in vehicles of this model.
+      operationId: owner.prototype.__create__vehicles
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/vehicle'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/vehicle'
+      deprecated: false
+    delete:
+      tags:
+        - owner
+      summary: Deletes all vehicles of this model.
+      operationId: owner.prototype.__delete__vehicles
+      parameters:
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/owners/{id}/vehicles/count':
+    get:
+      tags:
+        - owner
+      summary: Counts vehicles of owner.
+      operationId: owner.prototype.__count__vehicles
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /owners:
+    post:
+      tags:
+        - owner
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: owner.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/owner'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+    put:
+      tags:
+        - owner
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: owner.upsert__put_owners
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/owner'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+    patch:
+      tags:
+        - owner
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: owner.upsert__patch_owners
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/owner'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+    get:
+      tags:
+        - owner
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: owner.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/owner'
+      deprecated: false
+  /owners/replaceOrCreate:
+    post:
+      tags:
+        - owner
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: owner.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/owner'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+  /owners/upsertWithWhere:
+    post:
+      tags:
+        - owner
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: owner.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/owner'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+  '/owners/{id}/exists':
+    get:
+      tags:
+        - owner
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'owner.exists__get_owners_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/owners/{id}':
+    head:
+      tags:
+        - owner
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'owner.exists__head_owners_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - owner
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: owner.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+    delete:
+      tags:
+        - owner
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: owner.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - owner
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'owner.prototype.updateAttributes__put_owners_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/owner'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+    patch:
+      tags:
+        - owner
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'owner.prototype.updateAttributes__patch_owners_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/owner'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+  '/owners/{id}/replace':
+    post:
+      tags:
+        - owner
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: owner.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/owner'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+  /owners/findOne:
+    get:
+      tags:
+        - owner
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: owner.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/owner'
+      deprecated: false
+  /owners/update:
+    post:
+      tags:
+        - owner
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: owner.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/owner'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /owners/count:
+    get:
+      tags:
+        - owner
+      summary: Count instances of the model matched by where from the data source.
+      operationId: owner.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /components:
+    post:
+      tags:
+        - component
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: component.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/component'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+    put:
+      tags:
+        - component
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: component.upsert__put_components
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/component'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+    patch:
+      tags:
+        - component
+      summary: >-
+        Patch an existing model instance or insert a new one into the data
+        source.
+      operationId: component.upsert__patch_components
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/component'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+    get:
+      tags:
+        - component
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: component.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/component'
+      deprecated: false
+  /components/replaceOrCreate:
+    post:
+      tags:
+        - component
+      summary: >-
+        Replace an existing model instance or insert a new one into the data
+        source.
+      operationId: component.replaceOrCreate
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/component'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+  /components/upsertWithWhere:
+    post:
+      tags:
+        - component
+      summary: >-
+        Update an existing model instance or insert a new one into the data
+        source based on the where criteria.
+      operationId: component.upsertWithWhere
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/component'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+  '/components/{id}/exists':
+    get:
+      tags:
+        - component
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'component.exists__get_components_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/components/{id}':
+    head:
+      tags:
+        - component
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'component.exists__head_components_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - component
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: component.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+    delete:
+      tags:
+        - component
+      summary: 'Delete a model instance by {{id}} from the data source.'
+      operationId: component.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - component
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'component.prototype.updateAttributes__put_components_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/component'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+    patch:
+      tags:
+        - component
+      summary: >-
+        Patch attributes for a model instance and persist it into the data
+        source.
+      operationId: 'component.prototype.updateAttributes__patch_components_{id}'
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/component'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+  '/components/{id}/replace':
+    post:
+      tags:
+        - component
+      summary: >-
+        Replace attributes for a model instance and persist it into the data
+        source.
+      operationId: component.replaceById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/component'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+  /components/findOne:
+    get:
+      tags:
+        - component
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: component.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/component'
+      deprecated: false
+  /components/update:
+    post:
+      tags:
+        - component
+      summary: 'Update instances of the model matched by {{where}} from the data source.'
+      operationId: component.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            description: An object of model property name/value pairs
+            $ref: '#/definitions/component'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /components/count:
+    get:
+      tags:
+        - component
+      summary: Count instances of the model matched by where from the data source.
+      operationId: component.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+definitions:
+  x-any:
+    properties: {}
+  component:
+    properties:
+      componentDate:
+        description: Date of last activity
+        type: string
+        format: date
+      componentID:
+        description: Component ID
+        type: string
+      componentName:
+        description: Component Name
+        type: string
+      componentStatus:
+        description: Component Status
+        type: boolean
+      vehicleId:
+        type: string
+    required:
+      - componentDate
+      - componentID
+      - componentName
+      - componentStatus
+    additionalProperties: false
+  vehicle:
+    properties:
+      make:
+        description: Make of vehicle
+        type: string
+      model:
+        description: Model of vehicle
+        type: string
+      vin:
+        description: Vehicle ID number
+        type: string
+      year:
+        description: Year
+        type: number
+        format: double
+      ownerId:
+        type: string
+    required:
+      - make
+      - model
+      - vin
+      - year
+    additionalProperties: false
+  owner:
+    properties:
+      address1:
+        description: Owner address1
+        type: string
+      address2:
+        description: Owner address2
+        type: string
+      city:
+        description: Owner city
+        type: string
+      licenseNo:
+        description: Drivers License number
+        type: string
+      name:
+        description: Owner name
+        type: string
+      phone:
+        description: Owner phone number
+        type: string
+      state:
+        description: Owner state
+        type: string
+      zip:
+        description: Owner zip
+        type: string
+    required:
+      - address1
+      - city
+      - licenseNo
+      - name
+      - state
+      - zip
+    additionalProperties: false
+basePath: /api
+swagger: '2.0'
+info:
+  x-ibm-name: vehiclecomponents
+  version: 1.0.0
+  title: vehicleComponents
+schemes:
+  - https
+host: $(catalog.host)
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+    honda-dev-catalog:
+      properties:
+        runtime-url: >-
+          https://apiconnect-c75f689a-b87d-47a6-8da7-cc1f99c9bd1a.hondapot-devpot.apic.mybluemix.net
+        invoke-tls-profile: 'client:Loopback-client'
+  assembly:
+    execute:
+      - activity-log:
+          title: Log Vehicle Component Activity
+          content: payload
+          error-content: payload
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)
+          tls-profile: $(invoke-tls-profile)
+          title: Invoke Vehicle Components Microservice
+  properties:
+    runtime-url:
+      value: ''
+      description: ''
+      encoded: false
+    invoke-tls-profile:
+      value: ''
+      description: ''
+      encoded: false
+  gateway: datapower-gateway

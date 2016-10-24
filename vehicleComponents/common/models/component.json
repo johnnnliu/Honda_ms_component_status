@@ -1,0 +1,35 @@
+{
+  "name": "component",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "componentDate": {
+      "type": "date",
+      "required": true,
+      "description": "Date of last activity"
+    },
+    "componentID": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "description": "Component ID"
+    },
+    "componentName": {
+      "type": "string",
+      "required": true,
+      "description": "Component Name"
+    },
+    "componentStatus": {
+      "type": "boolean",
+      "required": true,
+      "description": "Component Status"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
